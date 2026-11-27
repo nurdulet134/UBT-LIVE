@@ -1,6 +1,15 @@
 <!doctype html><html lang="kk"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>UBT-LIVE</title><style>body{font-family:Arial;background:#eef3fa;color:#17233b;margin:0}main{max-width:850px;margin:25px auto;padding:20px}section{background:white;border-radius:18px;padding:24px;margin:15px 0;box-shadow:0 3px 15px #152d4a15}h1{color:#1359c9}button{background:#155bd4;color:white;border:0;padding:13px 20px;border-radius:10px;font-size:16px;cursor:pointer}input{padding:12px;border:1px solid #aebbd0;border-radius:8px;font-size:16px;max-width:90%}.choice{display:block;padding:12px;border:1px solid #d3ddeb;border-radius:10px;margin:9px 0;cursor:pointer}.choice:has(input:checked){background:#dceaff;border-color:#155bd4}.hide{display:none}.bar{display:flex;justify-content:space-between;gap:10px;align-items:center;flex-wrap:wrap}#clock{font-weight:bold;color:#b3261e;font-size:23px}.muted{color:#63738b}.error{color:#b3261e}</style><main><h1>📘 UBT-LIVE</h1><p>Математикалық сауаттылық · №1 апталық қорытынды тест · 27.11.2026</p><section id="welcome"><h2>Тестке кіру</h2><p>10 күрделі есеп · 40 минут · 10 балл</p><input id="name" placeholder="Оқушының аты-жөні" autocomplete="name"><p><button id="start">Тестті бастау</button></p><p id="startErr" class="error"></p></section><section id="exam" class="hide"><div class="bar"><strong id="progress"></strong><span id="clock">40:00</span></div><div id="question"></div><div class="bar"><button id="prev">← Артқа</button><button id="next">Келесі →</button><button id="finish">Аяқтау</button></div></section><section id="done" class="hide"></section><section><details><summary>🔐 Мұғалім панелі</summary><p class="muted">Нәтижелерді барлық құрылғылардан көру үшін Firebase конфигурациясын кодқа енгізу керек. Тек осы құрылғыдағы нәтижелерді көру үшін төмендегі батырманы пайдаланыңыз.</p><input id="adminpass" type="password" placeholder="Мұғалім құпиясөзі"><button id="adminBtn">Кіру</button><div id="adminOut"></div></details></section></main><script type="module">
 // Firebase Realtime Database: төмендегі объектіні Firebase Project settings → Your apps → Web app ішінен көшіріңіз.
-const firebaseConfig = null;
+const firebaseConfig = {
+  apiKey: "AIzaSyCwtLdHBQ4ytGuS8wAhuH2vgylcOLBMAg8",
+  authDomain: "ubt-live.firebaseapp.com",
+  databaseURL: "https://ubt-live-default-rtdb.firebaseio.com",
+  projectId: "ubt-live",
+  storageBucket: "ubt-live.firebasestorage.app",
+  messagingSenderId: "20506804262",
+  appId: "1:20506804262:web:a12c0e80e22fbb898326e7",
+  measurementId: "G-7Q5WQNPBXS"
+};
 const TEACHER_UID = 'Hhf7ko1TIvRTghhWyMCFgsTri362';
 const questions=[
 ['Егер 1★2=1²+2³, 2★3=2²+3³ болса, (3★4)−(2★5) мәнін табыңыз.',['−52','−56','−60','−48','−64'],1,'3²+4³−(2²+5³)=73−129=−56'],
